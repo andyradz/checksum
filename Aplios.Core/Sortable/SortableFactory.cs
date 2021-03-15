@@ -16,6 +16,9 @@ namespace Aplios.Core.Sortable {
                 case SortableType.BubbleSort:
                     sortable = new BubbleSorter<T>();
                     break;
+                case SortableType.InsertSort:
+                    sortable = new InsertSorter<T>();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("Nieokreślony typ sortowania");
             }

@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Randomize\RandomProportional.cs" />
     <Compile Include="Sortable\BubbleSorter.cs" />
+    <Compile Include="Sortable\InsertSorter.cs" />
     <Compile Include="Sortable\ISortable.cs" />
     <Compile Include="Sortable\SortableFactory.cs" />
     <Compile Include="Values\Default.cs" />

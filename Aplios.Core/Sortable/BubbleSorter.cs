@@ -18,9 +18,7 @@ namespace Aplios.Core.Sortable {
         public void Sort(T[] array) {
 
             if (IsNull(array))
-                throw new ArgumentNullException(nameof(array), $"{nameof(array)} cannot be null!");
-
-            const byte One = 0;
+                throw new ArgumentNullException(nameof(array), $"{nameof(array)} cannot be null!");                       
 
             var isChanged = false;
             var swapFunctor = SwapFunctor<T>.CreateInstance();
@@ -29,11 +27,11 @@ namespace Aplios.Core.Sortable {
 
                 ResetValue<bool>(ref isChanged);
 
-                for (long loopIdx = One; loopIdx < array.Length; loopIdx++)
+                for (long loopIdx = 1; loopIdx < array.Length; loopIdx++)
 
-                    if (array[loopIdx - One].CompareTo(array[loopIdx]) == (int)(CompareResult.Greater)) {
+                    if (array[loopIdx - 1].CompareTo(array[loopIdx]) == (int)(CompareResult.Greater)) {
                         isChanged = true;
-                        swapFunctor.Swap(ref array[loopIdx], ref array[loopIdx - One]);
+                        swapFunctor.Swap(ref array[loopIdx], ref array[loopIdx - 1]);
                     }
 
             } while (isChanged);
